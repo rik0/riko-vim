@@ -1,1 +1,0 @@
-/Users/enrico/src/conf/vim/.gvimrc
