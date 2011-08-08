@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/enrico/src/pyfiboheap/src'
+let g:netrw_dirhist_2='/Users/enrico/Downloads/simple_client_0_9'
+let g:netrw_dirhist_3='/Users/enrico/Dropbox/dnd-stuff'
+let g:netrw_dirhist_4='/Users/enrico/Dropbox'
+let g:netrw_dirhist_5='/Users/enrico/Dropbox/dnd-stuff'
+let g:netrw_dirhist_6='/Users/enrico/Dropbox'
+let g:netrw_dirhist_7='/Users/enrico/Dropbox/dnd-stuff'
+let g:netrw_dirhist_8='/Users/enrico/src/entangled/entangled/entangled'
