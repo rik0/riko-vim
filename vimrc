@@ -128,3 +128,5 @@ let clj_highlight_builtins = 1
 "
 "
 set ofu=syntaxcomplete#Complete
+
+map <C-t> :TlistToggle<CR>
