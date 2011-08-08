@@ -12,8 +12,6 @@ set expandtab
 
 set nofoldenable
 
-
-
 set hidden
 set ruler
 set title
@@ -55,6 +53,14 @@ if v:version >= 700 && has("gui_running")
     "for me to enable by default
     set cursorline   "highlight current line
     "set cursorcolumn "highlight current column
+
+    set guifont=Consolas:h14
+    set columns=80
+    set lines=40
+    set antialias
+    colorscheme morning
+    set number
+    set guioptions-=T
 endif
 
 "Syntax highlighting if appropriate
@@ -130,3 +136,4 @@ let clj_highlight_builtins = 1
 set ofu=syntaxcomplete#Complete
 
 map <C-t> :TlistToggle<CR>
+
