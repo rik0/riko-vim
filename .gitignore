@@ -1,0 +1,7 @@
+*~
+*.swp
+*.swo
+.netrwhist
+*.swp
+view/
+*.pyc
