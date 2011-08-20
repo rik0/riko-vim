@@ -79,6 +79,11 @@ match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces hi
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
 
+if version >= 703
+    set undofile
+    set undodir=$HOME/.vim-undos/
+endif
+
 augroup Python
     "See $VIMRUNTIME/ftplugin/python.vim
     au!
@@ -95,6 +100,24 @@ augroup Python
         au FileType python set completeopt-=preview
     endif
 augroup END
+
+" Setting up omnicpp
+" " Enable omni
+" """"""""""""""""""""""
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+" Remap <F5> to :make
+noremap <F5> :make<cr>
+"noremap <F4> :call system("xterm -cd " . expand("%:p:h"))<cr>
+
+
+" Enable text editing features
+autocmd BufRead,BufNewFile *.txt set textwidth=72
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -154,3 +177,7 @@ set ofu=syntaxcomplete#Complete
 
 map <C-t> :TlistToggle<CR>
 
+
+" ERLANG STUFF
+let g:erlangHighlightBif=1
+let g:erlangManPath="/usr/local/Cellar/erlang/R14B03/share/man"
