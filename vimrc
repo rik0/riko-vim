@@ -167,8 +167,7 @@ let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
 "       \"\oval, \circle, or \line size unavailable\n"' 
 
 
-let clj_highlight_builtins = 1
-
+let vimclojure#HighlightBuiltins = 1
 "set statusline+=%(%{Tlist_Get_Tagname_By_Line()}%), " Function name
 "
 "
