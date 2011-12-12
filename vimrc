@@ -141,17 +141,20 @@ let g:tex_flavor='latex'
 let g:tex_indent_items = 1
 
 let g:Tex_DefaultTargetFormat = 'pdf'
- 
+let g:Tex_MultipleCompileFormats = 'pdf,dvi'
+
 let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps = 'dvips -Pwww -o $*.ps $*.dvi'
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
+
 let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
 let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
-let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
  
 let g:Tex_ViewRule_dvi = 'texniscope'
 let g:Tex_ViewRule_ps = 'Preview'
 let g:Tex_ViewRule_pdf = 'Skim'
  
+let g:Tex_FormatDependency_pdf  = 'bib,pdf'
 let g:Tex_FormatDependency_ps  = 'dvi,ps'
 let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
 let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
@@ -181,3 +184,8 @@ map <C-t> :TlistToggle<CR>
 " ERLANG STUFF
 let g:erlangHighlightBif=1
 let g:erlangManPath="/usr/local/Cellar/erlang/R14B03/share/man"
+
+
+autocmd BufWritePre *.py,*.c,*.tex,*.cpp,*.h,*.hpp,*.java,*.hs,*.erl,*.clj,*.scm,*.ss,*.pl %s/\s\+$//e        " Trim ending spaces
+nnoremap <silent> <F3> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
