@@ -18,6 +18,7 @@ set title
 
 set nocp
 filetype plugin on
+
 map <C-L> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 
 set tags=~/.vim/stdtags,tags,.tags,../tags
@@ -118,6 +119,9 @@ noremap <F5> :make<cr>
 
 " Enable text editing features
 autocmd BufRead,BufNewFile *.txt set textwidth=72
+autocmd BufRead,BufNewFile *.tex set textwidth=72
+
+
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -176,9 +180,6 @@ let vimclojure#HighlightBuiltins = 1
 "
 "
 set ofu=syntaxcomplete#Complete
-
-map <C-t> :TlistToggle<CR>
-
 
 " ERLANG STUFF
 let g:erlangHighlightBif=1
