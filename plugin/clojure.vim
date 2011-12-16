@@ -12,7 +12,7 @@ let clojure_loaded = "2.2.0-SNAPSHOT"
 let s:cpo_save = &cpo
 set cpo&vim
 
-command! -nargs=0 ClojureRepl call vimclojure#StartRepl()
+command! -nargs=0 OpenClojureRepl call vimclojure#StartRepl()
 
 call vimclojure#MakeProtectedPlug("n", "AddToLispWords", "vimclojure#AddToLispWords", "expand(\"<cword>\")")
 
