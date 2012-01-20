@@ -196,6 +196,7 @@ nnoremap <silent> <F3> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 let g:pyflakes_use_quickfix = 0
 let g:pep8_map='<leader>8'
 
+map <leader>td <Plug>TaskList
 
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
