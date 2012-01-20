@@ -2,6 +2,8 @@
 "  source $REAL_HOME/.vimrc
 "catch /E484/
 "endtry
+"
+
 syntax on
 set tabstop=4
 set shiftwidth=4
@@ -188,4 +190,13 @@ let g:erlangManPath="/usr/local/Cellar/erlang/R14B03/share/man"
 
 autocmd BufWritePre *.py,*.c,*.tex,*.cpp,*.h,*.hpp,*.java,*.hs,*.erl,*.clj,*.scm,*.ss,*.pl %s/\s\+$//e        " Trim ending spaces
 nnoremap <silent> <F3> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+
+
+let g:pyflakes_use_quickfix = 0
+let g:pep8_map='<leader>8'
+
+
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
