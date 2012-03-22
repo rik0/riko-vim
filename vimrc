@@ -5,7 +5,6 @@
 syntax on
 set tabstop=4
 set shiftwidth=4
-set listchars=tab:.\ ,trail:_
 set list
 set smartindent
 set expandtab
@@ -46,11 +45,9 @@ set visualbell t_vb=
 "Show menu with possible tab completions
 "set wildmenu
 ""Ignore these files when completing names and in Explorer
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,CMakeFiles
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,CMakeFiles,*.beam,.hg
 
 if v:version >= 700 && has("gui_running")
-    "The following are a bit slow
-    "for me to enable by default
     set cursorline   "highlight current line
     "set cursorcolumn "highlight current column
 endif
@@ -169,6 +166,7 @@ let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
 
 let vimclojure#HighlightBuiltins = 1
 "set statusline+=%(%{Tlist_Get_Tagname_By_Line()}%), " Function name
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 "
 "
 "
@@ -180,3 +178,9 @@ map <C-t> :TlistToggle<CR>
 " ERLANG STUFF
 let g:erlangHighlightBif=1
 let g:erlangManPath="/usr/local/Cellar/erlang/R14B03/share/man"
+
+
+
+" Gist plugin
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
