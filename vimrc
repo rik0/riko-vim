@@ -180,15 +180,20 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
 
 let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
 let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
- 
-let g:Tex_ViewRule_dvi = 'texniscope'
-let g:Tex_ViewRule_ps = 'Preview'
-let g:Tex_ViewRule_pdf = 'Skim'
- 
-let g:Tex_FormatDependency_pdf  = 'bib,pdf'
+if has('macunix') 
+    let g:Tex_ViewRule_dvi = 'texniscope'
+    let g:Tex_ViewRule_ps = 'Preview'
+    let g:Tex_ViewRule_pdf = 'Skim'
+else
+
+endif
+let g:Tex_FormatDependency_pdf  = 'pdf'
 let g:Tex_FormatDependency_ps  = 'dvi,ps'
 let g:Tex_FormatDependency_pspdf = 'dvi,ps,pspdf'
 let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
+
+let g:Tex_BibtexFlavor = 'bibtex'
+
 
 " let g:Tex_IgnoredWarnings ='
 "       \"Underfull\n".
