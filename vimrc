@@ -218,3 +218,5 @@ let g:erlangManPath="/usr/local/Cellar/erlang/R14B03/share/man"
 " Gist plugin
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
+
+colorscheme desert
