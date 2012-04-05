@@ -78,6 +78,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 "" older stuff
 set tabstop=4
 set shiftwidth=4
+set tw=72
 set list
 set smartindent
 set expandtab
@@ -140,13 +141,6 @@ endif
 "not the original Bourne shell which very few use
 let g:is_posix = 1
 
-"flag problematic whitespace (trailing and spaces before tabs)
-"Note you get the same by doing let c_space_errors=1 but
-"this rule really applys to everything.
-highlight RedundantSpaces term=standout ctermbg=red guibg=red
-match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
-"use :set list! to toggle visible whitespace on/off
-set listchars=tab:>-,trail:.,extends:>
 
 if version >= 703
     set undofile
@@ -208,7 +202,7 @@ let g:Tex_BibtexFlavor = 'bibtex'
 "" CLOJURE
 let vimclojure#HighlightBuiltins = 1
 "set statusline+=%(%{Tlist_Get_Tagname_By_Line()}%), " Function name
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
+" set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
 " erlang
 " " ERLANG STUFF
@@ -220,4 +214,10 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
 colorscheme desert
-set tw=72
+"flag problematic whitespace (trailing and spaces before tabs)
+"Note you get the same by doing let c_space_errors=1 but
+"this rule really applys to everything.
+highlight RedundantSpaces term=standout ctermbg=red guibg=red
+match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+"use :set list! to toggle visible whitespace on/off
+set listchars=tab:>-,trail:.,extends:>
