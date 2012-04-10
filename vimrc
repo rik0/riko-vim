@@ -190,15 +190,17 @@ let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
 let g:Tex_BibtexFlavor = 'bibtex'
 
 
-" let g:Tex_IgnoredWarnings ='
-"       \"Underfull\n".
-"       \"Overfull\n".
-"       \"specifier changed to\n".
-"       \"You have requested\n".
-"       \"Missing number, treated as zero.\n".
-"       \"There were undefined references\n".
-"       \"Citation %.%# undefined\n".
-"       \"\oval, \circle, or \line size unavailable\n"'
+let g:Tex_IgnoredWarnings ='
+      \"Underfull\n".
+      \"Overfull\n".
+      \"specifier changed to\n".
+      \"You have requested\n".
+      \"Missing number, treated as zero.\n".
+      \"There were undefined references\n".
+      \"Citation %.%# undefined\n".
+      \"\oval, \circle, or \line size unavailable\n".
+      \"Text page %# contains only floats\n"'
+let g:Tex_IgnoreLevel = 9
 
 "" CLOJURE
 let vimclojure#HighlightBuiltins = 1
