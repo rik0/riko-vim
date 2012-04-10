@@ -95,6 +95,7 @@ map <C-L> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR
 set tags=~/.vim/stdtags,tags,.tags,../tags
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+
 if has("autocmd")
 " When editing a file, always jump to the last cursor position
 "   autocmd BufReadPost *
@@ -174,7 +175,7 @@ let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 --interaction=nonstopmode $*'
 
 let g:Tex_CompileRule_pspdf = 'ps2pdf $*.ps'
 let g:Tex_CompileRule_dvipdf = 'dvipdfm $*.dvi'
-if has('macunix') 
+if has('macunix')
     let g:Tex_ViewRule_dvi = 'texniscope'
     let g:Tex_ViewRule_ps = 'Preview'
     let g:Tex_ViewRule_pdf = 'Skim'
@@ -197,7 +198,7 @@ let g:Tex_BibtexFlavor = 'bibtex'
 "       \"Missing number, treated as zero.\n".
 "       \"There were undefined references\n".
 "       \"Citation %.%# undefined\n".
-"       \"\oval, \circle, or \line size unavailable\n"' 
+"       \"\oval, \circle, or \line size unavailable\n"'
 
 "" CLOJURE
 let vimclojure#HighlightBuiltins = 1
@@ -217,7 +218,33 @@ colorscheme desert
 "flag problematic whitespace (trailing and spaces before tabs)
 "Note you get the same by doing let c_space_errors=1 but
 "this rule really applys to everything.
-highlight RedundantSpaces term=standout ctermbg=red guibg=red
-match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+" highlight RedundantSpaces term=standout ctermbg=red guibg=red
+highlight ShowTrailingWhitespace term=standout ctermbg=Red guibg=Red
+" let g:ShowTrailingWhitespace = 0
+" let g:ShowTrailingWhitespace_FilterFunc = ''
+" let g:ShowTrailingWhitespace_FilterFunc = function('MyFunc')
+
+nnoremap <Leader>d$ :<C-u>%DeleteTrailingWhitespace<CR>
+vnoremap <Leader>d$ :DeleteTrailingWhitespace<CR>
+
+" let g:DeleteTrailingWhitespace = 0
+" let g:DeleteTrailingWhitespace_Action = 'delete'
+let g:DeleteTrailingWhitespace_Action = 'ask'
+let g:DeleteTrailingWhitespace_ChoiceAffectsHighlighting = 0
+
+" match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
+
+
+
+
+" GUI RELATED STUFF
+if has("gui_running")
+    set guifont=Consolas:h16,Menlo:h16,"DejaVu Sans Mono":h14
+    set columns=80
+    set lines=40
+    set antialias
+    set number
+    set guioptions-=T
+endif
