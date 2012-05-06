@@ -23,6 +23,12 @@ let g:pyflakes_use_quickfix = 0
 
 let g:pep8_map='<leader>8'
 
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" PYTHON
 au FileType python set omnifunc=pythoncomplete#Complete
