@@ -195,7 +195,6 @@ let g:Tex_FormatDependency_dvipdf = 'dvi,dvipdf'
 
 let g:Tex_BibtexFlavor = 'bibtex'
 
-
 let g:Tex_IgnoredWarnings ='
       \"Underfull\n".
       \"Overfull\n".
@@ -223,10 +222,24 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
 colorscheme desert
+
+
+" let g:ShowTrailingWhitespace_FilterFunc = ''
+" let g:ShowTrailingWhitespace_FilterFunc = function('MyFunc')
+
+let g:DeleteTrailingWhitespace_Action = 'ask'
+let g:DeleteTrailingWhitespace_ChoiceAffectsHighlighting = 0
+
+
+highlight ShowTrailingWhitespace term=standout ctermbg=Red guibg=Red
+
+
 "flag problematic whitespace (trailing and spaces before tabs)
 "Note you get the same by doing let c_space_errors=1 but
 "this rule really applys to everything.
 " highlight RedundantSpaces term=standout ctermbg=red guibg=red
+" match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
+
 highlight ShowTrailingWhitespace term=standout ctermbg=Red guibg=Red
 " let g:ShowTrailingWhitespace = 0
 " let g:ShowTrailingWhitespace_FilterFunc = ''
@@ -240,12 +253,8 @@ vnoremap <Leader>d$ :DeleteTrailingWhitespace<CR>
 let g:DeleteTrailingWhitespace_Action = 'ask'
 let g:DeleteTrailingWhitespace_ChoiceAffectsHighlighting = 0
 
-" match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces highlighted
 "use :set list! to toggle visible whitespace on/off
 set listchars=tab:>-,trail:.,extends:>
-
-
-
 
 " GUI RELATED STUFF
 if has("gui_running")
