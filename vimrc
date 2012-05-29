@@ -260,7 +260,11 @@ set listchars=tab:>-,trail:.,extends:>
 
 " GUI RELATED STUFF
 if has("gui_running")
-    set guifont=Consolas:h16,Menlo:h16,"DejaVu Sans Mono":h14
+    if has("x11")
+        set guifont="DejaVu Sans Mono 12"
+    else
+        set guifont=Consolas:h16,Menlo:h16,"DejaVu Sans Mono 12"
+    endif
     set columns=80
     set lines=40
     set antialias
