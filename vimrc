@@ -267,3 +267,17 @@ if has("gui_running")
     set number
     set guioptions-=T
 endif
+
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+if has('macunix')
+    " Configure browser for haskell_doc.vim
+    let g:haddock_browser = "open"
+    let g:haddock_browser_callformat = "%s %s"
+    let g:haddock_docdir = "/usr/local/Cellar/haskell-platform/2012.2.0.0/share/doc"
+else
+    let g:haddock_browser = "chromium-browser"
+endif
+
+
