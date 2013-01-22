@@ -268,3 +268,5 @@ if has("gui_running")
     set number
     set guioptions-=T
 endif
+
+map <Leader>nn :.s/\s*\(\w\+\)\s*=\s*{\(\d\+\)}\(,\?\)/  \1 = \2\3/<CR>
