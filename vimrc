@@ -261,7 +261,11 @@ set listchars=tab:>-,trail:.,extends:>
 
 " GUI RELATED STUFF
 if has("gui_running")
-    set guifont=Consolas:h16,Menlo:h16,"DejaVu Sans Mono":h14
+    if has("x11")
+        set guifont="DejaVu Sans Mono 12"
+    else
+        set guifont=Consolas:h16,Menlo:h16,"DejaVu Sans Mono 12"
+    endif
     set columns=80
     set lines=40
     set antialias
@@ -270,3 +274,15 @@ if has("gui_running")
 endif
 
 map <Leader>nn :.s/\s*\(\w\+\)\s*=\s*{\(\d\+\)}\(,\?\)/  \1 = \2\3/<CR>
+"
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+if has('macunix')
+    " Configure browser for haskell_doc.vim
+    let g:haddock_browser = "open"
+    let g:haddock_browser_callformat = "%s %s"
+    let g:haddock_docdir = "/usr/local/Cellar/haskell-platform/2012.2.0.0/share/doc"
+else
+    let g:haddock_browser = "chromium-browser"
+endif
