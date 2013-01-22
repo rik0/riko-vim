@@ -79,3 +79,6 @@
 [submodule "bundle/vim-ipython"]
 	path = bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython
+[submodule "vim-cython"]
+	path = vim-cython
+	url = https://github.com/tshirtman/vim-cython
