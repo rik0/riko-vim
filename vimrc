@@ -36,7 +36,7 @@ set clipboard=unnamed,unnamedplus,autoselect
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 "" PYTHON
-au FileType python set omnifunc=pythoncomplete#Complete
+" au FileType python set omnifunc=pythoncomplete#Complete
 
 au FileType python set nosmartindent autoindent
 au FileType python let &path = &path . "," . substitute($PYTHONPATH, ';', ',', 'g')
