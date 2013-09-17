@@ -88,3 +88,9 @@
 [submodule "bundle/vim-cython"]
 	path = bundle/vim-cython
 	url = https://github.com/tshirtman/vim-cython
+[submodule "bundle/yankring"]
+	path = bundle/yankring
+	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "bundle/yring"]
+	path = bundle/yring
+	url = git://github.com/vim-scripts/YankRing.vim.git
