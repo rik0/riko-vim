@@ -4,22 +4,22 @@ Plug 'tpope/vim-fugitive'
 " Plug 'scrooloose/syntastic' " http://vimawesome.com/plugin/syntastic
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
 " Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter' " http://vimawesome.com/plugin/vim-gitgutter
 Plug 'kien/ctrlp.vim' " http://vimawesome.com/plugin/ctrlp-vim-state-of-grace
 Plug 'Valloric/YouCompleteMe' "http://vimawesome.com/plugin/youcompleteme
 " Plug 'Shougo/neocomplcache.vim' " http://vimawesome.com/plugin/neocomplcache
-Plug 'othree/html5.vim'
-Plug 'plasticboy/vim-markdown' " http://vimawesome.com/plugin/markdown-syntax
+Plug 'othree/html5.vim', { 'for': 'html' }
 "http://vimawesome.com/plugin/neocomplete-vim
 Plug 'fatih/vim-go' "http://vimawesome.com/plugin/vim-go-all-too-well
 Plug 'mattn/gist-vim' "http://vimawesome.com/plugin/gist-vim
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd' }
-
-
+Plug 'plasticboy/vim-markdown', { 'for': 'mkd' } " http://vimawesome.com/plugin/markdown-syntax
+Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
+Plug 'nvie/vim-flake8', { 'for': 'python' } " http://vimawesome.com/plugin/vim-flake8
+" Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
 call plug#end()
 
 syntax on
@@ -31,7 +31,7 @@ set nofoldenable
 " NerdTree stuff
 "autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -70,6 +70,9 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" Python JEDI
+
 
 " Misc stuff
 " easier moving of code blocks
