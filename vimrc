@@ -17,9 +17,11 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'fatih/vim-go' "http://vimawesome.com/plugin/vim-go-all-too-well
 Plug 'mattn/gist-vim' "http://vimawesome.com/plugin/gist-vim
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' } " http://vimawesome.com/plugin/markdown-syntax
-Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
+" Not necessary: YCM should already take care of jedi
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
 Plug 'nvie/vim-flake8', { 'for': 'python' } " http://vimawesome.com/plugin/vim-flake8
 " Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
+Plug 'Bling/vim-airline' " http://vimawesome.com/plugin/vim-airline
 call plug#end()
 
 syntax on
@@ -70,6 +72,9 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
 
 " Python JEDI
 
