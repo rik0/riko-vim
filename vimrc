@@ -1,7 +1,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
-" Plug 'scrooloose/syntastic' " http://vimawesome.com/plugin/syntastic
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/syntastic' " http://vimawesome.com/plugin/syntastic
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -10,7 +11,7 @@ Plug 'godlygeek/tabular'
 " Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter' " http://vimawesome.com/plugin/vim-gitgutter
 Plug 'kien/ctrlp.vim' " http://vimawesome.com/plugin/ctrlp-vim-state-of-grace
-Plug 'Valloric/YouCompleteMe' "http://vimawesome.com/plugin/youcompleteme
+"Plug 'Valloric/YouCompleteMe' "http://vimawesome.com/plugin/youcompleteme
 " Plug 'Shougo/neocomplcache.vim' " http://vimawesome.com/plugin/neocomplcache
 Plug 'othree/html5.vim', { 'for': 'html' }
 "http://vimawesome.com/plugin/neocomplete-vim
@@ -18,10 +19,12 @@ Plug 'fatih/vim-go' "http://vimawesome.com/plugin/vim-go-all-too-well
 Plug 'mattn/gist-vim' "http://vimawesome.com/plugin/gist-vim
 Plug 'plasticboy/vim-markdown', { 'for': 'mkd' } " http://vimawesome.com/plugin/markdown-syntax
 " Not necessary: YCM should already take care of jedi
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
+Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
 Plug 'nvie/vim-flake8', { 'for': 'python' } " http://vimawesome.com/plugin/vim-flake8
-" Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
+Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
 Plug 'Bling/vim-airline' " http://vimawesome.com/plugin/vim-airline
+Plug 'ntpeters/vim-better-whitespace' " github.com/ntpeters/vim-better-whitespace
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 call plug#end()
 
 syntax on
@@ -78,6 +81,19 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Python JEDI
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
+
+" better whitespace
+autocmd FileType python,java,json,xml,html,c,cpp,go,perl autocmd BufWritePre <buffer> StripWhitespace
 
 " Misc stuff
 " easier moving of code blocks
