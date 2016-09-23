@@ -36,7 +36,7 @@ set nofoldenable
 " NerdTree stuff
 "autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -93,7 +93,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 
 " better whitespace
-autocmd FileType python,java,json,xml,html,c,cpp,go,perl autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType python,java,json,xml,html,c,cpp,go,perl,sh autocmd BufWritePre <buffer> StripWhitespace
+
+" shell
+au BufRead,BufNewFile *bash* let g:is_bash=1
+au BufRead,BufNewFile *bash* setf sh
+" use to override: # vim:let g:is_bash=1:set filetype=sh:
+nmap <silent> <leader>b :let g:is_bash=1<cr> :setf sh<cr> 
+
 
 " Misc stuff
 " easier moving of code blocks
