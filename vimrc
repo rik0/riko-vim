@@ -28,6 +28,7 @@ Plug 'ntpeters/vim-better-whitespace' " github.com/ntpeters/vim-better-whitespac
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'awk-support.vim'
 Plug 'bash-support.vim'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 
@@ -95,6 +96,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+
+" Tagbar
+nmap <Leader>T :TagbarToggle<CR>
+
 
 " better whitespace
 autocmd FileType python,java,json,xml,html,c,cpp,go,perl,sh autocmd BufWritePre <buffer> StripWhitespace
