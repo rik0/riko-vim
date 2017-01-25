@@ -26,7 +26,10 @@ Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
 Plug 'Bling/vim-airline' " http://vimawesome.com/plugin/vim-airline
 Plug 'ntpeters/vim-better-whitespace' " github.com/ntpeters/vim-better-whitespace
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'awk-support.vim'
+Plug 'bash-support.vim'
 call plug#end()
+
 
 syntax on
 filetype plugin on
