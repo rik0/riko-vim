@@ -121,8 +121,6 @@ noremap <C-b>l :bn<CR>
 noremap <C-b>j :bn<CR>
 noremap <C-b>k :bp<CR>
 noremap <C-b>h :bp<CR>
-noremap b :bn<CR>
-noremap B :bp<CR>
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
