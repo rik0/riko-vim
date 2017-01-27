@@ -4,6 +4,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/syntastic' " http://vimawesome.com/plugin/syntastic
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
