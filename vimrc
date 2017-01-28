@@ -8,6 +8,7 @@ Plug 'tpope/vim-abolish'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
+"Plug 'majutsushi/tagbar'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
 " Plug 'ervandew/supertab'
@@ -54,6 +55,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc     " MacOSX/Linux
 
 " markdown
 let g:vim_markdown_folding_disabled=1
+
+" tagbar
+nmap <leader>T :TagbarToggle<CR>
 
 
 " Go
