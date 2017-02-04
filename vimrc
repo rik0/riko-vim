@@ -8,7 +8,6 @@ Plug 'tpope/vim-abolish'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdtree'
-"Plug 'majutsushi/tagbar'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
 " Plug 'ervandew/supertab'
