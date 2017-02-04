@@ -34,7 +34,26 @@ call plug#end()
 
 
 syntax on
+filetype plugin indent on
 filetype plugin on
+
+set number
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set wrap
+set textwidth=79
+set formatoptions=lv
+set colorcolumn=80
+set smartindent
+set expandtab
+set mouse=ar
+
+set pastetoggle=<F2>
+set ignorecase
+
+let g:is_posix = 1
 
 " Misc stuff
 set nofoldenable
@@ -107,6 +126,7 @@ nmap <Leader>T :TagbarToggle<CR>
 
 " better whitespace
 autocmd FileType python,java,json,xml,html,c,cpp,go,perl,sh autocmd BufWritePre <buffer> StripWhitespace
+autocmd FileType python setlocal nosmartindent
 
 " shell
 au BufRead,BufNewFile *bash* let g:is_bash=1
@@ -148,24 +168,6 @@ nnoremap <Leader>0 :10b<CR>
 " It's useful to show the buffer number in the status line.
 "set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
-set number
-
-
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set wrap
-set textwidth=79
-set formatoptions=lv
-set colorcolumn=80
-set smartindent
-set expandtab
-set mouse=ar
-
-set pastetoggle=<F2>
-set ignorecase
-
-let g:is_posix = 1
 
 " allow toggling between local and default mode
 function TabToggle()
