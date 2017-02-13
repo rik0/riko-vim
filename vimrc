@@ -30,6 +30,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'awk-support.vim'
 Plug 'bash-support.vim'
 Plug 'majutsushi/tagbar'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 
