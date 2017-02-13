@@ -170,7 +170,7 @@ nnoremap <Leader>0 :10b<CR>
 
 
 " allow toggling between local and default mode
-function TabToggle()
+function! TabToggle()
   if &expandtab
     set shiftwidth=8
     set softtabstop=0
