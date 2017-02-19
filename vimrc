@@ -89,6 +89,8 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
+au FileType go nmap <Leader>cv <Plug>(go-coverage)
+
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 
@@ -105,6 +107,9 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+let g:go_list_type = "quickfix"
+
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
@@ -120,6 +125,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_aggregate_errors = 1
+
 
 " Tagbar
 nmap <Leader>T :TagbarToggle<CR>
@@ -128,6 +137,7 @@ nmap <Leader>T :TagbarToggle<CR>
 " better whitespace
 autocmd FileType python,java,json,xml,html,c,cpp,go,perl,sh autocmd BufWritePre <buffer> StripWhitespace
 autocmd FileType python setlocal nosmartindent
+autocmd FileType go autocmd BufWritePre,BufRead  <buffer> SyntasticCheck
 
 " shell
 au BufRead,BufNewFile *bash* let g:is_bash=1
