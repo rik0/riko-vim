@@ -12,6 +12,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
 " Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter' " http://vimawesome.com/plugin/vim-gitgutter
+Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'kien/ctrlp.vim' " http://vimawesome.com/plugin/ctrlp-vim-state-of-grace
 "Plug 'Valloric/YouCompleteMe' "http://vimawesome.com/plugin/youcompleteme
 " Plug 'Shougo/neocomplcache.vim' " http://vimawesome.com/plugin/neocomplcache
@@ -79,6 +80,10 @@ let g:vim_markdown_folding_disabled=1
 
 " tagbar
 nmap <leader>T :TagbarToggle<CR>
+
+" markdown
+let vim_markdown_preview_github=1
+let vim_markdown_preview_toggle=2
 
 
 " Go
