@@ -25,6 +25,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'mkd' } " http://vimawesome.com/plugin/
 Plug 'davidhalter/jedi-vim', { 'for': 'python' } " http://vimawesome.com/plugin/jedi-vim
 Plug 'nvie/vim-flake8', { 'for': 'python' } " http://vimawesome.com/plugin/vim-flake8
 Plug 'klen/python-mode' " http://vimawesome.com/plugin/python-mode
+Plug 'alfredodeza/coveragepy.vim'
 Plug 'Bling/vim-airline' " http://vimawesome.com/plugin/vim-airline
 Plug 'ntpeters/vim-better-whitespace' " github.com/ntpeters/vim-better-whitespace
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
@@ -131,6 +132,7 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 let g:airline#extensions#tabline#enabled = 1
 
 " Python JEDI
+au FileType python nmap <Leader>cv :Coveragepy refresh<CR>
 
 " Syntastic
 set statusline+=%#warningmsg#
