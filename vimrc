@@ -133,6 +133,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Python JEDI
 au FileType python nmap <Leader>cv :Coveragepy refresh<CR>
+let g:pymode_virtualenv=1
+let g:pymode_rope=0
 
 " Syntastic
 set statusline+=%#warningmsg#
