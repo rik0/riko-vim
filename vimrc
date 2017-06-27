@@ -35,6 +35,12 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+" Java...
+Plug 'SirVer/ultisnips'
+Plug 'Yggdroot/indentLine'
+Plug 'ervandew/eclim' ", {'for': 'java'}
+
+
 call plug#end()
 
 
@@ -166,6 +172,23 @@ au BufRead,BufNewFile *bash* setf sh
 " use to override: # vim:let g:is_bash=1:set filetype=sh:
 nmap <silent> <leader>b :let g:is_bash=1<cr> :setf sh<cr> 
 
+"Ultisnips
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+" IndentLine
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#09AA08'
+let g:indentLine_char = '│'
+
+" Eclim
+let g:airline#extensions#eclim#enabled = 1
 
 " Misc stuff
 " easier moving of code blocks
