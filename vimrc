@@ -156,10 +156,13 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_aggregate_errors = 1
 
+"pymode + rope
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_completion = 1
+
 
 " Tagbar
 nmap <Leader>T :TagbarToggle<CR>
-
 
 " better whitespace
 autocmd FileType python,java,json,xml,html,c,cpp,go,perl,sh autocmd BufWritePre <buffer> StripWhitespace
