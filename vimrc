@@ -36,10 +36,11 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 " Java...
-Plug 'SirVer/ultisnips'
-Plug 'Yggdroot/indentLine'
-Plug 'ervandew/eclim' ", {'for': 'java'}
+"Plug 'SirVer/ultisnips'
+"Plug 'Yggdroot/indentLine'
+"Plug 'ervandew/eclim' ", {'for': 'java'}
 
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 
@@ -140,7 +141,33 @@ let g:airline#extensions#tabline#enabled = 1
 " Python JEDI
 au FileType python nmap <Leader>cv :Coveragepy refresh<CR>
 let g:pymode_virtualenv=1
-let g:pymode_rope=0
+let g:pymode_rope=1
+let g:pymode_paths = ["build/lib/python2.7/site-packages/"]
+let g:pymode_indent = 1
+let g:pymode_folding = 0
+let g:pymode_run = 1
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_lint_unmodified = 0
+let g:pymode_lint_cwindow = 1
+let g:pymode_lint_signs = 1
+
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_completion_bind = '<C-Space>'
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime', 'sys', 'collections', 'operator', 'functools', 'itertools', 'pprint']
+let g:pymode_rope_autoimport_import_after_complete = 1
+let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_rope_goto_definition_cmd = 'new'
+
+
+
+
+
+let ropevim_extended_complete=1
+
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -156,10 +183,9 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_aggregate_errors = 1
 
-"pymode + rope
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope_completion = 1
-
+"Ack/Ag
+"let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Tagbar
 nmap <Leader>T :TagbarToggle<CR>
