@@ -35,6 +35,7 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'will133/vim-dirdiff'
 " Java...
 "Plug 'SirVer/ultisnips'
 "Plug 'Yggdroot/indentLine'
